@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la Gestión de Coches</h1>
+    <ul>
+        <li><a href="{{ url_for('main.alta_coche') }}">Dar de alta coche</a></li>
+        <li><a href="{{ url_for('main.alta_cliente') }}">Dar de alta cliente</a></li>
+        <li><a href="{{ url_for('main.facturacion') }}">Facturación</a></li>
+        <li><a href="{{ url_for('main.facturas_proforma') }}">Facturas Proforma</a></li>
+        <li><a href="{{ url_for('main.presupuestos') }}">Presupuestos</a></li>
+    </ul>
+</body>
+</html>

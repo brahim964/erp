@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presupuestos</title>
+</head>
+<body>
+    <h1>Presupuestos</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.date.label }} {{ form.date() }}<br>
+        {{ form.amount.label }} {{ form.amount() }}<br>
+        {{ form.client_id.label }} {{ form.client_id() }}<br>
+        {{ form.details.label }} {{ form.details() }}<br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

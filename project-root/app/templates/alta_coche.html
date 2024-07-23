@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alta de Coche</title>
+</head>
+<body>
+    <h1>Alta de Coche</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.license_plate.label }} {{ form.license_plate() }}<br>
+        {{ form.brand.label }} {{ form.brand() }}<br>
+        {{ form.model.label }} {{ form.model() }}<br>
+        {{ form.owner_id.label }} {{ form.owner_id() }}<br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
