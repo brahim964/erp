@@ -1,0 +1,2 @@
+SECRET_KEY=erogestoria
+SQLALCHEMY_DATABASE_URI=sqlite:///site.db
