@@ -11,8 +11,11 @@ class AltaCocheForm(FlaskForm):
 
 class AltaClienteForm(FlaskForm):
     name = StringField('Nombre', validators=[DataRequired(), Length(min=1, max=150)])
+    surname = StringField('Apellidos', validators=[DataRequired(), Length(min=1, max=150)])
     email = StringField('Email', validators=[DataRequired(), Email(), Length(min=1, max=150)])
-    password = PasswordField('Contraseña', validators=[DataRequired(), Length(min=1, max=150)])
+    phone = FloatField('Telefono', validators=[DataRequired()])
+    car = StringField('Coche/marca', validators=[DataRequired(), Length(min=1, max=150)])
+    identification = IntegerField('DNI/CIF del Propietario', validators=[DataRequired()])
     submit = SubmitField('Dar de Alta')
 
 class FacturaForm(FlaskForm):

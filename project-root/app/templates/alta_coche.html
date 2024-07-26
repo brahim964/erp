@@ -4,6 +4,20 @@
 
 {% block content %}
     <section class="container">
+     <div class="columns">
+        <!---columna pequeña-->
+        <aside class="sidebar">
+            <div class="company-info">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="company-logo">
+                <h2>Gestoría de Automóviles</h2>
+                <p><strong>CIF:</strong> B12345678</p>
+                <p><strong>Dirección:</strong> Calle Inventada, 123, Ciudad, País</p>
+                <p><strong>Teléfono:</strong> +123 456 789</p>
+                <p><strong>Correo:</strong> contacto@gestoriaauto.com</p>
+            </div>
+        </aside>
+        <!-- Columna grande (70%) - Formulario a la izquierda -->
+        <main class="content">
         <h1>Alta de Coche</h1>
         <form method="POST" action="{{ url_for('main.alta_coche') }}" class="form">
             {{ form.hidden_tag() }}

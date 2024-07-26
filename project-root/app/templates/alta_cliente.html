@@ -1,17 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Alta de Cliente</title>
-</head>
-<body>
-    <h1>Alta de Cliente</h1>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        {{ form.name.label }} {{ form.name() }}<br>
-        {{ form.email.label }} {{ form.email() }}<br>
-        {{ form.password.label }} {{ form.password() }}<br>
-        {{ form.submit() }}
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Alta de Cliente - Gestoría de Automóviles{% endblock %}
+
+{% block content %}
+<section class="container">
+    <div class="columns">
+        <!-- Columna pequeña (30%) - Información de la empresa -->
+        <aside class="sidebar">
+            <div class="company-info">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="company-logo">
+                <h2>Gestoría de Automóviles</h2>
+                <p><strong>CIF:</strong> B12345678</p>
+                <p><strong>Dirección:</strong> Calle Inventada, 123, Ciudad, País</p>
+                <p><strong>Teléfono:</strong> +123 456 789</p>
+                <p><strong>Correo:</strong> contacto@gestoriaauto.com</p>
+            </div>
+        </aside>
+        <!-- Columna grande (70%) - Formulario -->
+        <main class="content">
+            <h1>Alta de Cliente</h1>
+            <form method="POST" action="{{ url_for('main.alta_cliente') }}" class="form">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.name.label }}
+                    {{ form.name(class="form-control") }}
+                    {% for error in form.name.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.surname.label }}
+                    {{ form.surname(class="form-control") }}
+                    {% for error in form.surname.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control") }}
+                    {% for error in form.email.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.phone.label }}
+                    {{ form.phone(class="form-control") }}
+                    {% for error in form.phone.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.car.label }}
+                    {{ form.car(class="form-control") }}
+                    {% for error in form.car.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.identification.label }}
+                    {{ form.identification(class="form-control") }}
+                    {% for error in form.identification.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn">Dar de Alta</button>
+            </form>
+        </main>
+    </div>
+</section>
+{% endblock %}

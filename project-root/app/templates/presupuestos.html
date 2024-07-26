@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Presupuestos</title>
-</head>
-<body>
-    <h1>Presupuestos</h1>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        {{ form.date.label }} {{ form.date() }}<br>
-        {{ form.amount.label }} {{ form.amount() }}<br>
-        {{ form.client_id.label }} {{ form.client_id() }}<br>
-        {{ form.details.label }} {{ form.details() }}<br>
-        {{ form.submit() }}
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Facturación - Gestoría de Automóviles{% endblock %}
+
+{% block content %}
+<section class="container">
+    <div class="columns">
+        <!-- Columna pequeña (30%) - Información de la empresa -->
+        <aside class="sidebar">
+            <div class="company-info">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="company-logo">
+                <h2>Gestoría de Automóviles</h2>
+                <p><strong>CIF:</strong> B12345678</p>
+                <p><strong>Dirección:</strong> Calle Inventada, 123, Ciudad, País</p>
+                <p><strong>Teléfono:</strong> +123 456 789</p>
+                <p><strong>Correo:</strong> contacto@gestoriaauto.com</p>
+            </div>
+        </aside>
+        <!-- Columna grande (70%) - Formulario -->
