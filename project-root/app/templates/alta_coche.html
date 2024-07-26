@@ -1,18 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Alta de Coche</title>
-</head>
-<body>
-    <h1>Alta de Coche</h1>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        {{ form.license_plate.label }} {{ form.license_plate() }}<br>
-        {{ form.brand.label }} {{ form.brand() }}<br>
-        {{ form.model.label }} {{ form.model() }}<br>
-        {{ form.owner_id.label }} {{ form.owner_id() }}<br>
-        {{ form.submit() }}
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Alta de Coche - Gestoría de Automóviles{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <h1>Alta de Coche</h1>
+        <form method="POST" action="{{ url_for('main.alta_coche') }}" class="form">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.license_plate.label }}
+                {{ form.license_plate(class="form-control") }}
+                {% for error in form.license_plate.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.brand.label }}
+                {{ form.brand(class="form-control") }}
+                {% for error in form.brand.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.model.label }}
+                {{ form.model(class="form-control") }}
+                {% for error in form.model.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.owner_id.label }}
+                {{ form.owner_id(class="form-control") }}
+                {% for error in form.owner_id.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn">Registrar Coche</button>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gestoría de Automóviles{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <nav class="menu">
+            <a href="{{ url_for('main.index') }}">Inicio</a>
+            <a href="{{ url_for('main.alta_coche') }}">Alta de Coche</a>
+            <a href="{{ url_for('main.alta_cliente') }}">Alta de Cliente</a>
+            <a href="{{ url_for('main.transferir_coche') }}">Transferir Coche</a>
+            <a href="{{ url_for('main.dar_baja_coche') }}">Dar Baja de Coche</a>
+            <a href="{{ url_for('main.matricular_coche') }}">Matricular Coche</a>
+            <a href="{{ url_for('main.consultar_dgt') }}">Consultar DGT</a>
+            <a href="{{ url_for('main.facturacion') }}">Facturación</a>
+            <a href="{{ url_for('main.facturas_proforma') }}">Facturas Proforma</a>
+            <a href="{{ url_for('main.presupuestos') }}">Presupuestos</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Aquí puedes añadir el contenido del pie de página si es necesario -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

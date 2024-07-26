@@ -1,17 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-</head>
-<body>
-    <h1>Bienvenido a la Gestión de Coches</h1>
-    <ul>
-        <li><a href="{{ url_for('main.alta_coche') }}">Dar de alta coche</a></li>
-        <li><a href="{{ url_for('main.alta_cliente') }}">Dar de alta cliente</a></li>
-        <li><a href="{{ url_for('main.facturacion') }}">Facturación</a></li>
-        <li><a href="{{ url_for('main.facturas_proforma') }}">Facturas Proforma</a></li>
-        <li><a href="{{ url_for('main.presupuestos') }}">Presupuestos</a></li>
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Inicio - Gestoría de Automóviles{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Bienvenido a la Gestoría de Automóviles</h1>
+            <p>Servicios de alta calidad para la gestión de automóviles.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container">
+        <div class="service">
+            <h2>Alta de Coche</h2>
+            <p>Registra un nuevo coche en nuestro sistema.</p>
+        </div>
+        <div class="service">
+            <h2>Alta de Cliente</h2>
+            <p>Registra un nuevo cliente en nuestro sistema.</p>
+        </div>
+        <div class="service">
+            <h2>Transferir Coche</h2>
+            <p>Transfiere la propiedad de un coche a un nuevo propietario.</p>
+        </div>
+        <div class="service">
+            <h2>Dar Baja de Coche</h2>
+            <p>Elimina un coche del registro.</p>
+        </div>
+        <div class="service">
+            <h2>Matricular Coche</h2>
+            <p>Matricula un coche en el sistema.</p>
+        </div>
+        <div class="service">
+            <h2>Consultar DGT</h2>
+            <p>Consulta la información del coche en la DGT.</p>
+        </div>
+        <div class="service">
+            <h2>Facturación</h2>
+            <p>Genera y gestiona facturas para los servicios prestados.</p>
+        </div>
+        <div class="service">
+            <h2>Facturas Proforma</h2>
+            <p>Genera facturas proforma para los servicios.</p>
+        </div>
+        <div class="service">
+            <h2>Presupuestos</h2>
+            <p>Crea y gestiona presupuestos para los servicios.</p>
+        </div>
+    </section>
+{% endblock %}
