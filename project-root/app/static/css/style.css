@@ -1,0 +1,111 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Para evitar que el contenido quede oculto debajo del header fijo */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('../images/coche.jpg'); /* Cambia la ruta si es necesario */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 400px;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+    z-index: 1;
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* Container Section */
+.container {
+    background-image: url('../images/images.jpg'); /* Cambia la ruta si es necesario */
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Añade un fondo blanco semi-transparente */
+    border-radius: 10px; /* Añade bordes redondeados */
+}
+
+/* Service Cards */
+.service {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    max-width: calc(33.333% - 40px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff; /* Asegura que el fondo sea blanco */
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Headings */
+.service h2 {
+    margin-top: 0;
+    color: #333; /* Cambia el color del texto del título */
+}
+
+/* Service Paragraphs */
+.service p {
+    color: #666;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 10px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    .service {
+        flex: 1 1 calc(50% - 20px); /* Ajusta el tamaño de las tarjetas en pantallas medianas */
+        max-width: calc(50% - 20px);
+    }
+
+    .container {
+        padding: 15px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .service {
+        flex: 1 1 100%; /* Ajusta las tarjetas para que ocupen el 100% del ancho en pantallas muy pequeñas */
+        max-width: 100%;
+    }
+}
